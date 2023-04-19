@@ -15,7 +15,7 @@ buildscript {
                 password = 'admin123456'
             }
         }
-        maven { url = 'D:/maven_local'}
+       //maven { url = 'D:/maven_local'}
         maven { url 'https://jitpack.io' }
 
     }
