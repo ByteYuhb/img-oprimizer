@@ -35,15 +35,17 @@ buildscript {
 
 ```
 optimizerOptions {
-    triggerSize 4
-    type "lossy"
-    suffix "_opter"
+    triggerSize  6
+    type  "lossless"
+    suffix  ""
+    fileFilters = ["mmpic.png","aaa.png"]
 }
 ```
 
 1. `triggerSize` 用于过滤图片，小于该值的图片不会进行优化。默认为0，即每张图片都进行优化。
 2. `type` 优化类型，目前支持`"lossy"`和`"lossless"`。`"lossy"`为极限压缩(推荐，速度快，压缩率高)，`"lossless"`为无损压缩(速度慢，压缩率低，与原图无差别)。
 3. `suffix` 优化后的图片后缀。假如配置为`"_opter"`，`ic_launcher.png`经过优化后，将会生成`ic_launcher_opter.png`。默认为空，即覆盖原图。
+4. `fileFilters`支持过滤文件，对不需要压缩的图片添加白名单。
 
 ### 效果预览
 

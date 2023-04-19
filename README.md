@@ -40,15 +40,19 @@ You can add the following options to custom the task:
 
 ```
 optimizerOptions {
-    triggerSize 4
-    type "lossy"
-    suffix "_opter"
+    triggerSize  6
+    type  "lossless"
+    suffix  ""
+    fileFilters = ["mmpic.png","aaa.png"]
 }
 ```
 
 1. `triggerSize` Used for filtering pictures. Picture whose size is less than this option will be ignored. Defaults to 0.
 2. `type` Now supports`"lossy"` and `"lossless"`。`"lossy"` means extreme compression(recommend, default, fast, effective)，`"lossless"` means loseless compression(slow, inefficient)。
 3. `suffix` The suffix of the picture which has been optimized. If `"_opter"`，the optimizer will generate a new picture `orignal_opter.png` for `original.png`. Defaults to null.
+4. `fileFilters`support add whitelist if the file should not be optimizes.
+
+### 效果预览
 
 ### Preview
 
