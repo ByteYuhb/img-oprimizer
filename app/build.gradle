@@ -5,9 +5,9 @@ apply plugin: 'com.xiaoyu.imgoptimizer.plugin'
 
 optimizerOptions {
     triggerSize  6
-    type  "lossless"
-    suffix  ""
-    fileFilters = ["mmpic.png","aaa.png"]
+    type  "lossy"
+    suffix  "_lossy"
+    fileFilters = ["mmpic.png","ic_launcher_round.png"]
 }
 android {
     compileSdkVersion 29

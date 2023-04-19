@@ -1,8 +1,14 @@
-2023-04-19 16:50:25 info:2 images need to be optimized.
+2023-04-19 17:50:03 info:5 images need to be optimized.
 ----------------------------------------
-2023-04-19 16:50:28 info:Succeed! 7071B-->7071B, 0.0% saved! E:\MyWork\pri\imgOptimizer\app\src\main\res\mipmap-xxxhdpi\ic_launcher_round.png
+2023-04-19 17:50:04 info:Succeed! 893160B-->163525B, 81.691414% saved! E:\MyWork\pri\imgOptimizer\app\src\main\res\drawable\atm.png
 ----------------------------------------
-2023-04-19 16:50:30 info:Succeed! 7071B-->7071B, 0.0% saved! E:\MyWork\pri\imgOptimizer\app\src\main\res\mipmap-xxxhdpi\ic_launcher_round_opt.png
+2023-04-19 17:50:05 info:Succeed! 488393B-->163475B, 66.52798% saved! E:\MyWork\pri\imgOptimizer\app\src\main\res\drawable\atm_lossless.png
 ----------------------------------------
-2023-04-19 16:50:30 info:Total: 2, Succeed: 2, Skipped: 0, Failed: 0, Saved: 0KB
+2023-04-19 17:50:05 warn:Skipped! E:\MyWork\pri\imgOptimizer\app\src\main\res\mipmap-xxxhdpi\ic_launcher_round_lossless.png
+----------------------------------------
+2023-04-19 17:50:05 warn:Skipped! E:\MyWork\pri\imgOptimizer\app\src\main\res\mipmap-xxxhdpi\ic_launcher_round_opt.png
+----------------------------------------
+2023-04-19 17:50:05 warn:Skipped! E:\MyWork\pri\imgOptimizer\app\src\main\res\mipmap-xxxhdpi\ic_launcher_round_opt_lossless.png
+----------------------------------------
+2023-04-19 17:50:05 info:Total: 5, Succeed: 2, Skipped: 3, Failed: 0, Saved: 1029.8369140625KB
 ----------------------------------------
