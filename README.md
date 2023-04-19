@@ -52,8 +52,6 @@ optimizerOptions {
 3. `suffix` The suffix of the picture which has been optimized. If `"_opter"`，the optimizer will generate a new picture `orignal_opter.png` for `original.png`. Defaults to null.
 4. `fileFilters`support add whitelist if the file should not be optimizes.
 
-### 效果预览
-
 ### Preview
 
 |Original png|Extreme compression(lossy)|Loseless compression(lossless)|
