@@ -1,0 +1,37 @@
+apply plugin: 'maven'
+
+/*
+这是一个通用上传库
+* */
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            def isSnapShot = Boolean.valueOf(MAVEN_IS_SNAPSHOT)
+            def versionName = MAVEN_VERSION
+            // 是否快照版本
+            if (isSnapShot) {
+                versionName += "-SNAPSHOT"
+            }
+            // 快照仓库路径
+            snapshotRepository(url: uri(MAVEN_SNAPSHOT_URL)) {
+                authentication(userName: MAVEN_USERNAME, password: MAVEN_PASSWORD)
+            }
+            // 发布仓库路径
+            repository(url: uri(MAVEN_RELEASE_URL)) {
+                authentication(userName: MAVEN_USERNAME, password: MAVEN_PASSWORD)
+            }
+
+            pom.project {
+                packaging MAVEN_POM_PACKAGING
+                groupId MAVEN_GROUP_ID
+                artifactId MAVEN_ARTIFACTID
+                version versionName
+                description 'A gradle plugin for optimizing PNG.'
+            }
+           /* println("###################################"
+                    + "\nuploadArchives = " + pom.groupId + ":" + pom.artifactId + ":" + pom.version + "." + pom.packaging
+                    + "\nrepository =" + (isSnapshot ? MAVEN_SNAPSHOT_URL : MAVEN_RELEASE_URL)
+                    + "\n###################################")*/
+        }
+    }
+}

@@ -1,0 +1,41 @@
+//插件依赖
+plugins {
+    id 'groovy'
+    id 'java-gradle-plugin' // Java Gradle Plugin
+    id 'com.github.dcendents.android-maven' //用于上传github的插件
+}
+
+//资源文件路径设置
+sourceSets {
+    main {
+        groovy {
+            srcDir 'src/main/groovy'
+        }
+        resources {
+            srcDir 'src/main/resources'
+        }
+    }
+}
+//仓库设置
+repositories {
+    google()
+    mavenCentral()
+}
+//依赖设置
+dependencies {
+    implementation gradleApi()
+    implementation localGroovy()
+    compileOnly 'com.android.tools.build:gradle:4.2.0'
+}
+
+//自动创建插件属性文件property
+gradlePlugin {
+    plugins {
+        modularPlugin {
+            id = 'com.xiaoyu.imgoptimizer.plugin'
+            implementationClass = 'com.xiaoyu.imgoptimizer.plugin.PicOptimizerPlugin'
+        }
+    }
+}
+//导入maven上传的gradle文件
+//apply from: '../gradle/maven_publish.gradle'

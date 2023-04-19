@@ -1,0 +1,76 @@
+//apply plugin: 'maven-publish'
+apply plugin: 'maven'
+apply plugin: 'signing'
+
+def GROUP = 'com.xiaoyu'
+def ARTIFACT_ID = 'img-optimizer'
+def VERSION = '1.0.1'
+
+group = GROUP
+version = VERSION
+
+// task to generate source.jar
+task sourcesJar(type: Jar) {
+    group 'build'
+    archiveClassifier.set('sources')
+}
+
+javadoc {
+    options.encoding = 'UTF-8'
+    failOnError false
+}
+
+// task to generate javadoc.jar
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    group 'build'
+    from javadoc.getDestinationDir()
+    archiveClassifier.set('javadoc')
+}
+
+artifacts {
+    archives jar
+    archives javadocJar
+    archives sourcesJar
+}
+
+/*signing {
+    sign configurations.archives
+}*/
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url:NEXUS_REPOSITORY_URL) {
+                authentication(userName: NEXUS_USERNAME, password: NEXUS_PASSWORD)
+            }
+            repository(url:uri('D:/maven_local'))
+            pom.project {
+                packaging 'jar'
+                groupId GROUP
+                artifactId ARTIFACT_ID
+                version VERSION
+                name ARTIFACT_ID
+                description 'A gradle plugin for optimizing PNG.'
+                /*url 'https://github.com/chenenyu/img-optimizer-gradle-plugin'
+                scm {
+                    url 'https://github.com/chenenyu/img-optimizer-gradle-plugin'
+                    connection 'scm:git@github.com:chenenyu/img-optimizer-gradle-plugin.git'
+                    developerConnection 'scm:git@github.com:chenenyu/img-optimizer-gradle-plugin.git'
+                }
+                licenses {
+                    license {
+                        name 'The Apache Software License, Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+                developers {
+                    developer {
+                        id 'chenenyu'
+                        name 'chenenyu'
+                        email 'chenenyux@gmail.com'
+                    }
+                }*/
+            }
+        }
+    }
+}

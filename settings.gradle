@@ -1,0 +1,3 @@
+include ':img-optimizer-gradle'
+include ':app'
+rootProject.name = "imgOptimizer"
