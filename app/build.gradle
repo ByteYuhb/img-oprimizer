@@ -1,14 +1,14 @@
 plugins {
     id 'com.android.application'
 }
-/*apply plugin: 'com.xiaoyu.imgoptimizer.plugin'
+apply plugin: 'com.xiaoyu.imgoptimizer.plugin'
 
 optimizerOptions {
     triggerSize  6
     type  "lossless"
     suffix  ""
     fileFilters = ["mmpic.png","aaa.png"]
-}*/
+}
 android {
     compileSdkVersion 29
     //buildToolsVersion "33.0.0"
